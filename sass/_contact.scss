@@ -1,0 +1,99 @@
+#contact_banner{
+    @extend #blog_banner;
+}
+//contact info
+#contact_info{
+    padding: 50px 0;
+    background: #141414;
+    
+    & .contact_info_item{
+        text-align: center;
+        color: #fff;
+        padding: 30px 0;
+        border-right: 1px solid #666;
+        & span i{
+            font-size: 34px;
+        }
+    }
+    & .col-md-4:last-child{
+        & .contact_info_item{
+            border:none;
+        }
+    }  
+}//end contact info
+//contact form
+#message{
+    background: #141414;
+    padding: 50px 0;
+    & .msg_hedaing{
+        text-align: center;
+        color: #fff;
+        padding: 20px 0;
+        & h1{
+            font-size: 64px;
+        }
+    }//message heading
+    & form{
+        & input, textarea{
+            width: 100%;
+            background: transparent;
+            border:none;
+            border: 1px solid #444;
+            margin-top: 20px;
+            padding: 10px;
+            &:focus{
+                outline-color: #e90000;
+            }
+        }
+        & textarea{
+            resize: none;
+            height: 120px;
+        }
+        button[type="submit"]{
+        display: inline-block;
+        border: none;
+        color:#fff;
+        background-color: #e90000;
+        padding: 10px 20px;
+        margin-top: 10px;
+        position: relative;
+        z-index: 1;
+        &::before{
+            content: '';
+            position: absolute;
+            inset: 0;
+            width: 0;
+            background-color: rgba(165, 1, 1, 0.7);
+            transform-origin: left;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.5s ease-in-out;
+            z-index: -1;
+        }
+        &:hover::before{
+            opacity: 1;
+            visibility: visible;
+            width: 50%;
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            inset: 0 0 0 50%;
+            width: -100%;
+            background-color: rgba(165, 1, 1, 0.7);
+            transform: scaleX(0);
+            transform-origin: right;
+            opacity: 0;
+            visibility: hidden;
+            transition: ease-in-out 0.5s;
+            z-index: -1;
+        }
+        &:hover::after{
+            opacity: 1;
+            visibility: visible;
+            width: 50%;
+            transform: scaleX(100%);
+        }
+    }
+    }//form
+}

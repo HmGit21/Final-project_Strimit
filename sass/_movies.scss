@@ -1,0 +1,76 @@
+//movies slider
+#movies{
+    overflow: hidden;
+    .movies_bg{
+        width: 100%;
+        height: 90vh;
+        background-repeat: no-repeat;
+        background-position: center center ;
+        background-size: cover;
+        position: relative;
+        z-index: 1;
+        &::before{
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: -1;
+        }
+        & img{
+            height: 100%;
+            width: 100%;
+        }
+        .moviees_inner_slide{
+            position: relative;
+            
+            & .moviees_inner_menu{
+                z-index: 999;
+                position: absolute;
+                top: 15%;
+                left: 0;
+                & ul{
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                    & li a{
+                        color:#fff;
+                        background: #999;
+                        padding: 10px 20px;
+                        text-decoration: none;
+                    }
+                }
+            }
+            & .movies_inner_about{
+                position: absolute;
+                bottom: 25%;
+                left: 10px;
+                z-index: 999;
+                color:#fff;
+                cursor: pointer;
+
+                & .movies_btn{
+                    background-color: #999;
+                    padding: 5px;
+                    color:#fff;
+                    font-weight: 500;
+                    margin-right: 20px;
+                }
+            }
+        }//movie inner slider
+        
+    }//movies bg 
+    .myArrow3{
+        color:#fff;
+        font-size: 24px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 99;
+    }
+    .moviArrow_left{
+        left:20px;
+    }
+    .moviArrow_right{
+        right: 20px;
+    }
+}
